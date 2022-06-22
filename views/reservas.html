@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Río Patio Cultural - Reservas</title>
+	<link rel="shortcut icon" href="../img/logos/logo.png">
+	<link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="body-reservas">
+	<nav id="nav">
+		<a href="../index.html">
+		<img id="img-nav" src="../img/logos/logo.png" alt="logo de rio patio cultural">
+		</a>
+		<ul>
+			<li><a href="../index.html">Home</a></li>
+			<li><a href="qs.html">Quienes somos</a></li>
+			<li><a href="ac.html">Agenda cultural</a></li>
+			<li><a href="reservas.html">Reservas</a></li>
+			<li><a href="contacto.html">Contacto</a></li>
+		</ul>
+	</nav>
+	<header id="header-reservas">
+		<img src="../img/paginas/patiosoleado.png" alt="patio soleado">
+	</header>
+	<main id="main-reservas">
+		<h1 id="titulo-reservas">Realizá tu reserva!</h1>
+			<section class="form-r">
+				<form action="reserva.php">
+					<fieldset>
+						<legend></legend>
+						<label for="Fecha">Fecha y Hora</label>
+						<input type="date" id="Fecha" value="fecha" placeholder="25/05/2022">
+						<select name="hora" id="Hora" value="hora"	>
+							<option value="20">20</option>
+							<option value="21">21</option>
+							<option value="22">22</option>
+						</select>
+						<label for="Cantidad de Personas">Cantidad de Personas</label>
+						<input type="number" id="Cantidad de Personas" value="personas" placeholder="10">
+						<div class="orden-reserva">
+							<legend class="label-reserva">Ubicación de la mesa</legend>
+								<label id="boton-reserva" for="Planta baja">Planta baja
+									<input type="radio" id="Planta baja" value="pb" name="AoB">
+									</label>
+								<label id="boton-reserva" for="Planta alta">Planta alta
+									<input type="radio" id="Planta alta" value="pa" name="AoB">
+									</label>
+								<label id="boton-reserva" for="Adentro">Adentro
+									<input type="radio" id="Adentro" value="adentro" name="AdoAf">
+									</label>
+								<label id="boton-reserva" for="Afuera">Afuera
+									<input type="radio" id="Afuera" value="afuera" name="AdoAf">
+									</label>
+								<label class="label-reserva" for="Aclaraciones">Aclaraciones</label>
+								<textarea name="Aclaraciones" id="Aclaraciones" value="aclaracion" placeholder="Mesa redonda" cols="30" rows="10"></textarea>
+						</div>
+						<input type="reset" value="Cancelar">
+						<input type="submit" value="Enviar">
+					</fieldset>
+				</form>
+			</section>
+			<section id="video-reservas">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/ohdwQdz0WKU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</section>
+	</main>
+<footer class="foter-flex" id="footer">
+		<div class="superposicion-links-xl">
+		<p class="color-footer">Nuestro Instagram!</p>
+		<div class="superposicion-links">
+		<a  href="https://www.coderhouse.com/" target="_blank">
+			<div class="logo-redes">
+			<img src="../img/logos/instagram2.webp" alt="">
+		</div>
+		</a>
+		</div>
+		</div>
+		<div class="superposicion-links-xl">
+		<p class="color-footer">Hablanos por Whathsapp</p>
+				<div class="superposicion-links">
+		<a  href="https://www.clarin.com/" target="_blank">
+			<div class="logo-redes">
+			<img src="../img/logos/whatsapp2.jpg" alt="">
+			</div>
+		</a>
+		</div>
+		</div>
+</footer>
+</body>
+</html>

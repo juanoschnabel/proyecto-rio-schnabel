@@ -44,11 +44,27 @@ nav ul li a {
 		text-decoration: none;
 		color: #D97904;
 		font-weight: bolder;
+		background-image: linear-gradient(currentColor, currentColor);
+   		background-position: 0% 100%;
+    	background-repeat: no-repeat;
+    	background-size: 0% 2px;
+    	transition: background-size .3s;
 	}
+ul li a:hover{
+			color: black;
+			font-weight: 600;
+			/*Subrayado animado*/
+			background-size: 100% 2px;
+		}
+
 #img-nav{
 	display: flex;
-	width: 30px;
+	width: 40px;
 	margin-bottom: 30px;
+}
+#img-nav:hover{
+	transform: scaleX(1.2);
+	cursor: pointer;
 }
 /*termina nav*/
 
@@ -72,6 +88,10 @@ footer a div img {
 	width: 50px;
 	align-items:center;
 	}
+.logo-redes:hover{
+	transform: scaleX(1.2);
+	cursor: pointer;
+}
 .superposicion-links {
 	margin: 0rem;
 	position: sticky;
@@ -109,7 +129,7 @@ footer a div img {
 .body-index{
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: 20% 40% 40% 20%;
+	grid-template-rows: auto;
 	grid-template-areas:
 	"nav" 
 	"main"
@@ -128,7 +148,7 @@ footer a div img {
 	display: flex;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
-	align-items: center;
+	justify-content: center;
 }
 
 /*termina index*/
@@ -138,15 +158,17 @@ footer a div img {
 .body-qs{
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: 20% 50% 30% 20%;
+	grid-template-rows: auto;
 	grid-template-areas:
 	"nav" 
 	"mainqs"
+	"videoqs"
 	"headerqs"
 	"footer";
 }
 #header-qs{
 	grid-area: headerqs;
+	margin-bottom: 2rem;
 }
 #main-qs{
 	grid-area: mainqs;
@@ -160,6 +182,9 @@ footer a div img {
 }
 #imgs{
 	grid-area: headerqs;
+}
+#videoqs{
+	grid-area: videoqs;
 }
 .title-style {
 	font-size: 10rem;
@@ -177,7 +202,8 @@ footer a div img {
 	}
 .center-video {
 	text-align: center;
-	margin: 5rem;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
 	}
 #text-format{
 	margin-left: 5rem;
@@ -186,7 +212,6 @@ footer a div img {
 }
 .photo-format {
 	text-align: center;
-	margin: 5rem;
 }
 /*termina quienes somos*/
 
@@ -195,7 +220,7 @@ footer a div img {
 .body-ac{
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: 20% 30% 30% 30% 20%;
+	grid-template-rows: auto;
 	grid-template-areas:
 	"nav" 
 	"mainac"
@@ -218,13 +243,12 @@ footer a div img {
 }
 
 #formato-titulo {
-	display: flex;
-	align-content: center;
 	font-size: 6rem;
 	color: #F29F05;
 	text-decoration: underline;
 	text-shadow: 1px 1px 2px black;
 	text-align: center;
+	justify-content: space-around;
 	}
 table{
 	width: auto;
@@ -252,14 +276,13 @@ iframe{
 .body-reservas{
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows:  20% 60% 30% 20%;
+	grid-template-rows:  auto;
 	grid-template-areas: 
 	"nav"
 	"main-r"
 	"header-r"
 	"footer";
 	justify-items: center;
-	align-items: auto;
 }
 #main-reservas{
 	grid-area: main-r;
@@ -280,8 +303,7 @@ iframe{
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	margin-bottom: 0rem;
-	margin-left: 5rem;
+    justify-content: center;
 }
 #titulo-reservas {
 	font-size: 6rem;
@@ -305,6 +327,10 @@ form{
 	font-weight: bolder;
 	margin: 25px;
 	}
+.form-r{
+	display: flex;
+	justify-content: center;
+}
 .label-reserva {
 	font-size: 2.5rem;
 	color: #F2BE22;
@@ -374,6 +400,10 @@ form{
 	flex-direction: row;
 	justify-content: space-around;
 	}
+.orden-botones:hover{
+	transform: scaleX(1.2);
+	cursor: pointer;
+}
 .center-textarea {
 	display: flex;
   	align-items: center;
@@ -402,8 +432,6 @@ form{
 #contact-info {
 	display: flex;
 	flex-direction: row;
-	align-items: right;
-	justify-items: space-between;
 }
 /*termina contacto*/
 /* CHECK POINTS!!!!*/
@@ -467,7 +495,7 @@ form{
 	.body-index{
 		display: grid;
 		grid-template-columns: 50vw 50vw;
-		grid-template-rows: 20% 80% 20%;
+		grid-template-rows: auto;
 		grid-template-areas: 
 		"nav nav" 
 		"main header" 
@@ -497,7 +525,7 @@ form{
 	.body-qs{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 20% 30% 30% 30%;
+	grid-template-rows: auto;
 	grid-template-areas:
 	"nav nav" 
 	"mainqs headerqs"
@@ -513,22 +541,29 @@ form{
 	height: 100%;
  	width: 100%;
  	object-fit: contain;
- 	height:450px;
- 	width: 450px;
- 	margin-bottom: 4rem;
+ 	/*height:450px;
+ 	width: 450px;*/
+ 	margin-bottom: 2rem;
+ 	margin-top: 2rem;
 	}
 	.center-video{
 	display: flex;
+	flex-direction: row;
 	align-items: center;
 	text-align: center;
 	margin: 3rem;
+	}
+	#formato-titulo{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
 	}
 	/*COMIENZA AGENDA CULTURAL*/
 
 	.body-ac{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 20% 30% 30% 30%;
+	grid-template-rows: auto;
 	grid-template-areas:
 	"nav nav" 
 	"mainac headerac"
@@ -548,7 +583,7 @@ form{
 	.body-reservas{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows:  20% 90% 30%;
+	grid-template-rows: auto;
 	grid-template-areas: 
 	"nav nav"
 	"main-r header-r"

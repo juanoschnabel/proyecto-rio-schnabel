@@ -6,10 +6,11 @@
 	<title>Río Patio Cultural - Quienes Somos</title>
 	<link rel="shortcut icon" href="../img/logos/logo.png">
 	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/animate.css">
 </head>
 <body>
-	<div class="body-qs" >
-	<nav id="nav">
+<div class="body-qs" >
+	<nav class="botonera" id="nav"> 
 		<a href="../index.html">
 		<img id="img-nav" src="../img/logos/logo.png" alt="logo de rio patio cultural">
 		</a>
@@ -24,17 +25,16 @@
 	<header id="header-qs">
 		<div ><img class="photo-format" src="../img/paginas/publico.png" alt="Foto de público"></div>
 	</header>
-	<main  id="main-qs" >
-		<div class="text-style">
+	<main>
+		<div id="main-qs" class="text-style wow fadeInDownBig">
 		<h1 id="formato-titulo">Quienes Somos</h1>
 		<p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Mollitia, molestias voluptatem ut corrupti perspiciatis doloribus expedita unde, consequuntur doloremque accusantium excepturi laudantium perferendis, iure iste ipsum facere, fugiat? Explicabo, odit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione recusandae saepe laborum doloribus libero fugit, praesentium hic eaque possimus eveniet suscipit nisi error repudiandae accusamus consequuntur, culpa, numquam facilis iste.</p>
 		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In eius aliquid itaque nulla id. Atque possimus asperiores autem rerum? Veritatis reiciendis ea, provident consequatur omnis? Rem et eaque nisi, saepe?Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Possimus nesciunt exercitationem ducimus impedit? Sapiente obcaecati explicabo perferendis minus assumenda odit modi ex nam alias aut consequatur necessitatibus harum at, iusto.</p>
 		</div>
-	<div class="center-video">
+	<div id="videoqs" class="center-video">
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/tRv1el5fyWw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 	</div>
 	</main>
-	</div>
 	<footer class="foter-flex" id="footer">
 		<div class="superposicion-links-xl">
 		<p class="color-footer">Nuestro Instagram!</p>
@@ -58,5 +58,9 @@
 		</div>
 	</footer>
 </div>
+<script src="../js/wow.min.js"></script>
+<script>
+	new WOW().init();
+</script>
 </body>
 </html>

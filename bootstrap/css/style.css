@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@700&family=Roboto:wght@300&display=swap');
+*{
+	font-family: 'Roboto', 'Verdana', sans-serif;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;	
+	overflow-x: hidden;
+
+	}
+
+html{
+	font-size: 62.5%;
+	}
+img{
+	border-radius: 10px;
+}
+body{
+	background-image: url(../img/fondos/madera2.jpg);
+	background-attachment: scroll;
+	background-position: center;
+	background-repeat: repeat;
+	background-size: cover;	
+}
+iframe{
+	border-radius: 10px;
+}
+
+/*clases generales*/
+.row-reverse{
+	flex-direction: row-reverse;
+}
+.column{
+	flex-direction: column;
+}
+
+/*comienza nav*/
+.img-nav{
+	display: flex;
+	max-width: 40px;
+}
+.img-nav:hover{
+	transform: scaleX(1.2);
+	cursor: pointer;
+}
+.nav-color{
+	background-color: rgba(89, 2, 2, .8);
+	position: sticky;
+}
+
+.vinculos-nav {
+		font-size: 1.2rem;
+		text-decoration: none;
+		color: #D97904;
+		font-weight: bolder;
+		background-image: linear-gradient(currentColor, currentColor);
+   		background-position: 0% 100%;
+    	background-repeat: no-repeat;
+    	background-size: 0% 2px;
+    	transition: background-size .3s;
+	}
+
+.vinculos-nav:hover{
+			color: black;
+			font-weight: 600;
+			/*Subrayado animado*/
+			background-size: 100% 2px;
+		}
+.color-button{
+	background-color: black;
+
+}
+.hamburguesa{
+	padding: 0.25rem 0.75rem;
+    font-size: 1.25rem;
+    line-height: 2;
+    background-color: #D97904;
+    border: 1px solid #000000f2;
+    border-radius: 0.5rem;
+}
+.format-toggler{
+	font-size: 1.5rem;
+	color: #D97904;
+	font-weight: bolder;
+}
+.format-toggler:hover{
+	font-size: 1.5rem;
+	color: #D97904;
+}
+
+/*termina nav*/
+
+/*comienza footer*/
+
+.color-footer {
+    color: #fdd282;
+    text-align: center;
+    text-decoration: underline;
+    font-family: sans-serif;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+.img-pie{
+	display: flex;
+	max-height: 40px;
+	max-width: 40px;
+	}
+
+.img-pie:hover{
+	transform: scaleX(1.2);
+	cursor: pointer;
+	}
+.flex-img-pie{
+	display: flex;
+	justify-content: center;
+	}
+
+/*comienza index*/
+.foto-index{
+	max-height: 100%;
+	max-width: 100%;
+	margin-top: 2rem;
+}
+
+.video-index{
+	display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+/*termina index*/
+/*quienes somos*/
+.text-style {
+    font-size: 1.4rem;
+    text-align: center;
+    color: black;
+    font-weight: bolder;
+    margin: 2rem;
+    background-color: wheat;
+    border-radius: 10px;
+}
+#formato-titulo {
+    font-size: 2.4rem;
+    color: #F29F05;
+    text-decoration: underline;
+    text-shadow: 1px 1px 2px black;
+    text-align: center;
+    justify-content: space-around;
+    margin-top: 0.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.text-style {
+    font-size: 1.4rem;
+    text-align: center;
+    color: black;
+    font-weight: bolder;
+    margin: 2rem;
+    background-color: wheat;
+    border-radius: 10px;
+}
+.foto-qs{
+	display: flex;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+/*check points*/
+@media (min-width: 768px){
+	.pie{
+		display: flex;
+		justify-content: space-evenly;
+	}
+	.vinculos-nav{
+		font-size: 1.5rem;
+	}
+	/*quienes somos*/
+
+	.text-style{
+		font-size: 1.6rem;
+	}
+}
+
+@media (min-width: 992px){
+	.vinculos-nav{
+		font-size: 1.8rem;
+	}
+	/*quienes somos*/
+	.flex-xl-qs{
+		display: flex;
+		flex-direction: row-reverse;
+	}
+	.img-qs-xl{
+		display: flex;
+		width: 95%;
+		height: 95%;
+	}
+}

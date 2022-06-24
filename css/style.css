@@ -27,7 +27,8 @@ iframe{
 
 /*clases generales*/
 .row-reverse{
-	flex-direction: row-reverse;
+	display: flex;
+	flex-direction: column-reverse;
 }
 .column{
 	flex-direction: column;
@@ -169,6 +170,29 @@ iframe{
 	max-height: 500px;
     max-width: 100%;
 }
+/*quienes somos*/
+/*agenda cultural*/
+
+.format-table{
+	text-align: center;
+	font-size: 2rem;
+	margin: 2rem;
+}
+.row-reverse-ac{
+	display: flex;
+	flex-direction: column-reverse;
+}
+.video-ac {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.img-ac{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2rem;
+}
 /*check points*/
 @media (min-width: 768px){
 	.pie{
@@ -178,6 +202,12 @@ iframe{
 	.vinculos-nav{
 		font-size: 1.5rem;
 	}
+	/*index*/
+	.row-reverse{
+	display: flex;
+	flex-direction: row-reverse;
+	}
+
 	/*quienes somos*/
 
 	.text-style{

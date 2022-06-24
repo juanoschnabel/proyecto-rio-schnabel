@@ -176,7 +176,8 @@ iframe{
 .format-table{
 	text-align: center;
 	font-size: 2rem;
-	margin: 2rem;
+	margin-left: 2rem;
+	margin-right: 2rem;
 }
 .row-reverse-ac{
 	display: flex;
@@ -193,6 +194,16 @@ iframe{
     justify-content: center;
     margin-top: 2rem;
 }
+#formato-titulo {
+	display: flex;
+	align-content: center;
+	font-size: 3rem;
+	color: #F29F05;
+	text-decoration: underline;
+	text-shadow: 1px 1px 2px black;
+	text-align: center;
+	margin-top: 2rem;
+	}
 /*check points*/
 @media (min-width: 768px){
 	.pie{
@@ -201,6 +212,9 @@ iframe{
 	}
 	.vinculos-nav{
 		font-size: 1.5rem;
+	}
+	.format-table{
+		font-size: 2.5rem;
 	}
 	/*index*/
 	.row-reverse{
@@ -213,7 +227,16 @@ iframe{
 	.text-style{
 		font-size: 1.6rem;
 	}
-
+	#formato-titulo{
+		font-size: 3.5rem;
+	}
+	.video-ac{
+		margin-left: 2rem;
+		margin-right: 2rem;
+	}
+	.img-ac{
+		margin-top: 7rem;
+	}
 }
 
 @media (min-width: 992px){
@@ -229,5 +252,15 @@ iframe{
 		display:flex;
 		width: 95%;
 		height: 95%;
+	}
+	/*agenda cultural*/
+	.format-table{
+		font-size: 3rem;
+	}
+	#formato-titulo{
+		font-size: 5rem;
+	}
+		.img-ac{
+		margin-top: 9rem;
 	}
 }

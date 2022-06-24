@@ -163,6 +163,10 @@ iframe{
     margin-bottom: 2rem;
     justify-content: center;
 }
+.img-qs{
+	max-height: 500px;
+    max-width: 100%;
+}
 /*check points*/
 @media (min-width: 768px){
 	.pie{
@@ -177,6 +181,7 @@ iframe{
 	.text-style{
 		font-size: 1.6rem;
 	}
+
 }
 
 @media (min-width: 992px){
@@ -188,7 +193,7 @@ iframe{
 		display: flex;
 		flex-direction: row-reverse;
 	}
-	.img-qs-xl{
+	.img-qs{
 		display: flex;
 		width: 95%;
 		height: 95%;

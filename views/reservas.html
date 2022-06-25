@@ -22,7 +22,7 @@
     			<a href="#" class="format-toggler">Menu</a>
 		    </button>
    		 <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-      		<div class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+      		<div class="navbar-nav ms-auto mb-2 mb-lg-0">
         		<a class="nav-link active vinculos-nav" aria-current="page" href="../index.html">Home</a>
         		<a class="nav-link active vinculos-nav" aria-current="page" href="qs.html">Quienes Somos</a>
         		<a class="nav-link active vinculos-nav" aria-current="page" href="ac.html">Agenda Cultural</a>
@@ -33,7 +33,64 @@
  		 </div>
 	</nav>
   	<!-- termina nav -->
-  	<div class="row row-reverse">
+  <div class="row row-reverse-r">
+	  <header class="col-md-5  ms-auto mb-2 mb-lg-0 header-r">
+			<img class="rounded mx-auto d-block img-r" src="../img/paginas/reservas.jpg" alt="patio soleado">
+		</header>
+  	<main class="col-md-6">
+  		<div class="main-r">
+  			<div class="wow fadeInLeftBig"><h1 id="titulo-reserva">Realizá tu reserva!</h1></div>
+  			<form class="align-items-center formato-tabla wow fadeInLeftBig">
+  				<div class="column col-sm-10 col-md-12 mb-3 formato-linea-reserva">
+  						<section class="celda-reserva">
+		    				<label for="Fecha">Fecha</label>
+								<input type="date" id="Fecha" value="fecha" placeholder="25/05/2022">
+							</section>
+							<section class="celda-reserva">
+						<label for="hora">Hora</label>
+								<select name="hora" id="Hora" value="hora"	>
+									<option value="20">20</option>
+									<option value="21">21</option>
+									<option value="22">22</option>
+								</select>
+							</section>
+							<section class="celda-reserva">
+						<label for="Cantidad de Personas">Cantidad de Personas</label>
+						<input type="number" id="Cantidad de Personas" value="personas" placeholder="10">
+							</section>
+					</div>
+				  <fieldset class="row mb-3">
+				    <div class="mesa-reserva"><legend class="">Ubicación de la Mesa</legend></div>
+				    <div class="col-sm-12 formato-radio">
+				      <div class="form-check">
+					        <input class="form-check-input" type="radio" name="AoB" id="planta-baja" value="pb">
+					        <label class="form-check-label" for="planta-baja">Planta Baja</label>
+					    </div>
+					    <div class="form-check">
+					        <input class="form-check-input" type="radio" name="AoB" id="planta-alta" value="pa">
+					        <label class="form-check-label" for="planta-alta">Planta Alta</label>
+					    </div>
+					    <div class="form-check">
+					        <input class="form-check-input" type="radio" name="AdoAf" id="adentro" value="adentro">
+					        <label class="form-check-label" for="adentro">Adentro</label>
+				     </div>
+				     <div class="form-check">
+					        <input class="form-check-input" type="radio" name="AdoAf" id="afuera" value="afuera">
+					        <label class="form-check-label" for="afuera">Afuera</label>
+				     </div>
+				   			 <div class="mesa-reserva"><legend>Aclaraciones</legend></div>
+								<div class="text-reserva col-lg-12"><textarea name="Aclaraciones" id="Aclaraciones" value="aclaracion" placeholder="Mesa redonda" cols="30" rows="10"></textarea></div>
+							<article class="botones-contacto">
+								<input class="btn btn-primary btn-lg" type="submit" value="Enviar">
+								<input class="btn btn-primary btn-lg" type="reset" value="Borrar">
+							</article>
+					</fieldset>
+				</form>
+  		</div>
+  		<section class="video-contacto wow fadeInDownBig">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/ohdwQdz0WKU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</section>
+  	</main>
 	</div>
 	<footer class="text-center">
 	  <!-- Grid container -->

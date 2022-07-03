@@ -1,0 +1,50 @@
+.img-nav{
+	display: flex;
+	max-width: 40px;
+	&:hover{
+		transform: scaleX(1.2);
+		cursor: pointer;
+	}
+}
+.nav-color{
+	background-color: $navBGColor;
+	position: sticky;
+}
+.vinculos-nav {
+		font-size: $fontM;
+		text-decoration: none;
+		color: $navFcolor;
+		font-weight: bolder;
+		background-image: linear-gradient(currentColor, currentColor);
+   		background-position: 0% 100%;
+    	background-repeat: no-repeat;
+    	background-size: 0% 2px;
+    	transition: background-size .3s;
+    	&:hover{
+			color: $blackFont;
+			font-weight: 600;
+			/*Subrayado animado*/
+			background-size: 100% 2px;
+		}
+	}
+.color-button{
+	background-color: $blackFont;
+
+}
+.hamburguesa{
+	padding: 0.25rem 0.75rem;
+    font-size: $fontL;
+    line-height: 2;
+    background-color: $navFcolor;
+    border: 1px solid $borderColour;
+    border-radius: 0.5rem;
+}
+.format-toggler{
+	font-size: $fontL;
+	color: $navFcolor;
+	font-weight: bolder;
+	&:hover{
+		font-size: $fontL;
+		color: $navFcolor;
+	}
+}

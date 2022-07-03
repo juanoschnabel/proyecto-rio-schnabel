@@ -1,0 +1,125 @@
+@media (min-width: 768px){
+	.pie{
+		display: flex;
+		justify-content: space-evenly;
+	}
+	.vinculos-nav{
+		font-size: $fontL;
+	}
+	.format-table{
+		font-size: $fontXXL;
+	}
+	/*index*/
+	.row-reverse{
+	display: flex;
+	flex-direction: row-reverse;
+	}
+
+	/*quienes somos*/
+
+	.text-style{
+		font-size: $fontQS;
+	}
+	.formato-titulo{
+		font-size: $fontXXXL;
+	}
+	.foto-qs{
+		margin-top: 5rem;
+	}
+	.video-ac{
+		margin-left: 2rem;
+		margin-right: 2rem;
+	}
+	.img-ac{
+		margin-top: 7rem;
+	}
+	.main-ac{
+		margin-top: 6rem;
+	}
+
+	/*contacto*/
+	.title-map{
+		font-size: $fontXXL;
+	}
+	.titles-contacto{
+		font-size: $fontXXL;
+	}
+	.formato-xl-contactos {
+    margin-top: 5rem;
+	}
+	.row-reverse-xl-contacto{
+		display: flex;
+		flex-direction: row-reverse;
+	}
+	.format-map {
+    margin-top: 5rem;
+	}
+	/*reserva*/
+	.row-reverse-r{
+		display: flex;
+		flex-direction: row-reverse;
+	}
+	.img-r{
+	margin-top: 5rem;
+	max-width: 100%;
+	}
+	.header-r{
+		margin-right: 1rem;
+		margin-top: 2rem;
+	}
+}
+
+
+@media (min-width: 992px){
+	.vinculos-nav{
+		font-size: $fontNav;
+	}
+	/*quienes somos*/
+	.flex-xl-qs{
+		display: flex;
+		flex-direction: row-reverse;
+	}
+	.img-qs{
+		display:flex;
+		width: 95%;
+		height: 95%;
+	}
+	/*agenda cultural*/
+	.format-table{
+		font-size: $fontAC;
+	}
+	.formato-titulo{
+		font-size: $fontTitle;
+	}
+	.img-ac{
+		margin-top: 9rem;
+	}
+	/*contacto*/
+	.title-map{
+		font-size: $fontXXXL;
+	}
+	.titles-contacto{
+		font-size: $fontXXXL;
+	}
+	
+	.formato-linea-reserva {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+	}
+	.text-reserva{
+	}
+	.botones-contacto{
+		display: flex;
+	justify-content: space-evenly;
+	}
+	.header-r{
+		margin-right: 2rem;
+	}
+	.main-r{
+		margin-top: 5rem;
+	}
+	#titulo-reserva{
+		font-size: $fontXXXL;
+	}
+}

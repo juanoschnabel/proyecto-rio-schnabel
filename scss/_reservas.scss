@@ -1,0 +1,72 @@
+
+#titulo-reserva {
+  font-size: $fontXL;
+  color: $titleColour;
+  text-decoration: underline;
+  text-shadow: 1px 1px 2px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.formato-tabla {
+  background-color: $tableColourResrerv;
+  margin-top: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  border-radius: 10px;
+}
+.formato-linea-reserva {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.celda-reserva {
+  justify-content: flex-start;
+  margin: 0.5rem;
+  text-align: center;
+  font-size: $fontM;
+}
+.mesa-reserva {
+  display: flex;
+  flex-direction: row;
+  font-size: $fontM;
+  text-align: center;
+  color: $blackFont;
+  font-weight: bolder;
+  text-decoration: underline;
+}
+.formato-radio {
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+  font-size: $fontM;
+}
+.aclaraciones-reserva {
+  display: flex;
+  flex-direction: row;
+  font-size: $fontM;
+  font-weight: bolder;
+  text-align: center;
+  justify-content: space-around;
+}
+.text-reserva {
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+  align-content: space-between;
+  justify-content: space-evenly;
+}
+.format-l-reserva {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.row-reverse-r {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.img-r {
+  max-width: 95%;
+}
+.main-r {
+  margin-top: 2rem;
+}

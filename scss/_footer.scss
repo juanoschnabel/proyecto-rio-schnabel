@@ -1,0 +1,21 @@
+.color-footer {
+    color: $footerColor;
+    text-align: center;
+    text-decoration: underline;
+    font-family: $footerFont;
+    font-weight: bolder;
+    font-size: $fontL;
+}
+.img-pie{
+	display: flex;
+	max-height: 40px;
+	max-width: 40px;
+    :hover{
+    transform: scaleX(1.2);
+    cursor: pointer;
+    }
+}
+.flex-img-pie{
+    display: flex;
+    justify-content: center;
+    }

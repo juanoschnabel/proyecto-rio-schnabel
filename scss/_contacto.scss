@@ -1,4 +1,4 @@
-
+/*contacto*/
 .format-map {
   display: flex;
   flex-direction: column;
@@ -7,17 +7,21 @@
 }
 .title-map {
   font-size: $fontXL;
-  color: $titleColour;
+  color: map-get($map:$colores, $key: 'titleColour');
   text-decoration: underline;
-  text-shadow: 1px 1px 2px $blackFont;
+  text-shadow: 1px 1px 2px map-get($map:$colores, $key: 'blackFont');
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.center-map {
-  max-width: 100%;
-  max-height: 100%;
+@mixin map($width,$height){
+  max-width: $width;
+  max-height: $height;
 }
+.center-map {
+@include map(100%, 100%)
+}
+
 .logos-redes-contacto {
   display: flex;
   height: 100px;
@@ -30,9 +34,9 @@
 }
 .titles-contacto {
   font-size: $fontXL;
-  color: $titleColour;
+  color: map-get($map:$colores, $key: 'titleColour');
   text-decoration: underline;
-  text-shadow: 1px 1px 2px $blackFont;
+  text-shadow: 1px 1px 2px map-get($map:$colores, $key: 'blackFont');
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,6 +60,10 @@
 }
 .font-text-area {
   font-size: $fontL;
+}
+.size-text-area{
+  @extend .font-text-area;
+  font-family: verdana;
 }
 .video-contacto {
   display: flex;

@@ -1,4 +1,4 @@
-
+/*agenda cultural*/
 .format-table {
   text-align: center;
   font-size: $fontXL;
@@ -22,9 +22,9 @@
 }
 .formato-titulo {
   font-size: $fontXL;
-  color: $titleColour;
+  color: map-get($map:$colores, $key: 'titleColour');
   text-decoration: underline;
-  text-shadow: 1px 1px 2px $blackFont;
+  text-shadow: 1px 1px 2px map-get($map:$colores, $key: 'blackFont');;
   display: flex;
   flex-direction: column;
   align-items: center;

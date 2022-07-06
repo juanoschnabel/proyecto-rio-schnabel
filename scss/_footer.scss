@@ -1,5 +1,6 @@
+/*footer*/
 .color-footer {
-    color: $footerColor;
+    color:  map-get($map:$colores, $key: 'footerColor');
     text-align: center;
     text-decoration: underline;
     font-family: $footerFont;

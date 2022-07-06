@@ -1,3 +1,4 @@
+/*navBar*/
 .img-nav{
 	display: flex;
 	max-width: 40px;
@@ -7,13 +8,13 @@
 	}
 }
 .nav-color{
-	background-color: $navBGColor;
+	background-color: map-get($map:$colores, $key: 'navBGColor');
 	position: sticky;
 }
 .vinculos-nav {
 		font-size: $fontM;
 		text-decoration: none;
-		color: $navFcolor;
+		color: map-get($map:$colores, $key: 'navFcolor');
 		font-weight: bolder;
 		background-image: linear-gradient(currentColor, currentColor);
    		background-position: 0% 100%;
@@ -21,30 +22,30 @@
     	background-size: 0% 2px;
     	transition: background-size .3s;
     	&:hover{
-			color: $blackFont;
+			color: map-get($map:$colores, $key: 'blackFont');
 			font-weight: 600;
 			/*Subrayado animado*/
 			background-size: 100% 2px;
 		}
 	}
 .color-button{
-	background-color: $blackFont;
+	background-color: map-get($map:$colores, $key: 'blackFont');
 
 }
 .hamburguesa{
 	padding: 0.25rem 0.75rem;
     font-size: $fontL;
     line-height: 2;
-    background-color: $navFcolor;
-    border: 1px solid $borderColour;
+    background-color: map-get($map:$colores, $key: 'navFcolor');
+    border: 1px solid map-get($map:$colores, $key: 'borderColour');
     border-radius: 0.5rem;
 }
 .format-toggler{
 	font-size: $fontL;
-	color: $navFcolor;
+	color: map-get($map:$colores, $key: 'navFcolor');
 	font-weight: bolder;
 	&:hover{
 		font-size: $fontL;
-		color: $navFcolor;
+		color: map-get($map:$colores, $key: 'navFcolor');
 	}
 }

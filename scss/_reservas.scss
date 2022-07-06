@@ -1,15 +1,15 @@
-
+/*reservas*/
 #titulo-reserva {
   font-size: $fontXL;
-  color: $titleColour;
+  color: map-get($map:$colores, $key: 'titleColour');
   text-decoration: underline;
-  text-shadow: 1px 1px 2px black;
+  text-shadow: 1px 1px 2px map-get($map:$colores, $key: 'blackFont');
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .formato-tabla {
-  background-color: $tableColourResrerv;
+  background-color: map-get($map:$colores, $key: 'tableColourResrerv');
   margin-top: 1rem;
   margin-left: 2rem;
   margin-right: 2rem;
@@ -32,7 +32,7 @@
   flex-direction: row;
   font-size: $fontM;
   text-align: center;
-  color: $blackFont;
+  color: map-get($map:$colores, $key: 'blackFont');
   font-weight: bolder;
   text-decoration: underline;
 }

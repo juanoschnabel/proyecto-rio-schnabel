@@ -1,7 +1,8 @@
+/*quienes somos*/
 .text-style {
     font-size: $fontQs;
     text-align: center;
-    color: $blackFont;
+    color:  map-get($map:$colores, $key: 'blackFont');
     font-weight: bolder;
     margin: 2rem;
     background-color: wheat;
@@ -9,7 +10,7 @@
 }
 #formato-titulo {
     font-size: $fontXXL;
-    color: $titleColour;
+    color: map-get($map:$colores, $key: 'titleColour');
     text-decoration: underline;
     text-shadow: 1px 1px 2px black;
     text-align: center;

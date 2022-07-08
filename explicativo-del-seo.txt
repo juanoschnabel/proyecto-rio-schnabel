@@ -1,0 +1,5 @@
+En todas las páginas de mi sitio sumé el SEO con las siguientes características:
+Descripción: Mediante la etiqueta meta name description agregué descripciones personalizadas
+según las características de cada página HTML.
+Palabras Clave: Mediante la etiqueta name keywords, agregué palabras claves que se asocian 
+a la marca Rio Patio Cultural.

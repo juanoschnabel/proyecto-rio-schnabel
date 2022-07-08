@@ -65,7 +65,7 @@
   flex-direction: column-reverse;
 }
 .img-r {
-  max-width: 95%;
+  object-fit: cover;
 }
 .main-r {
   margin-top: 2rem;

@@ -19,7 +19,7 @@
   flex-direction: row;
   justify-content: center;
   margin-top: 2rem;
-  object-fit: cover;
+  object-fit: contain;
 }
 .formato-titulo {
   font-size: $fontXL;

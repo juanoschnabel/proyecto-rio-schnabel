@@ -1,0 +1,29 @@
+
+#fondo-error{
+    background-color: map-get($map:$colores, $key: 'blackFont');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.errortitle {
+    text-align: center;
+    color:map-get($map:$colores, $key: 'white');
+    margin-top: 2rem;
+}
+.errorsubtitle{
+	text-align: center;
+	color:map-get($map:$colores, $key: 'white');
+}
+.cont-error{
+	display: flex;
+	flex-direction: column;
+}
+.img-error{
+    display: flex;
+    height: 650px;
+    object-fit: contain;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+}

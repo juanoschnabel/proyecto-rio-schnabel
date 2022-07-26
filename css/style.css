@@ -15,7 +15,7 @@ html {
 img {
   border-radius: 10px; }
 
-body {
+.body-general {
   background-image: url(../img/fondos/madera2.jpg);
   background-attachment: scroll;
   background-position: center;
@@ -329,6 +329,34 @@ iframe {
   justify-content: center;
   margin: 2rem; }
 
+#fondo-error {
+  background-color: black;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.errortitle {
+  text-align: center;
+  color: white;
+  margin-top: 2rem; }
+
+.errorsubtitle {
+  text-align: center;
+  color: white; }
+
+.cont-error {
+  display: flex;
+  flex-direction: column; }
+
+.img-error {
+  display: flex;
+  height: 650px;
+  object-fit: contain;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: nowrap; }
+
 @media (min-width: 768px) {
   .pie {
     display: flex;
@@ -340,14 +368,17 @@ iframe {
   /*index*/
   .row-reverse {
     display: flex;
-    flex-direction: row-reverse; }
+    flex-direction: row-reverse;
+    justify-content: space-between; }
   .title-index {
     font-size: 3rem; }
   .p-index {
     font-size: 2rem; }
   /*quienes somos*/
   .text-style {
-    font-size: 1.6rem; }
+    font-size: 1.6rem;
+    margin-bottom: 4rem;
+    margin-top: 5rem; }
   .formato-titulo {
     font-size: 3.5rem; }
   .foto-qs {
@@ -356,7 +387,8 @@ iframe {
     margin-left: 2rem;
     margin-right: 2rem; }
   .img-ac {
-    margin-top: 7rem; }
+    margin-top: 7rem;
+    margin-right: 2rem; }
   .main-ac {
     margin-top: 2rem; }
   .format-table {
@@ -403,7 +435,8 @@ iframe {
   .formato-titulo {
     font-size: 5rem; }
   .img-ac {
-    margin-top: 9rem; }
+    margin-top: 9rem;
+    margin-right: 2rem; }
   /*contacto*/
   .title-map {
     font-size: 3.5rem; }
@@ -417,6 +450,7 @@ iframe {
     display: flex;
     justify-content: space-evenly; }
   .header-r {
+    margin-right: 2rem;
     margin-top: 5rem; }
   .main-r {
     margin-top: 5rem; }

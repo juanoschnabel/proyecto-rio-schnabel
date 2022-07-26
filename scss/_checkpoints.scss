@@ -13,6 +13,7 @@
 	.row-reverse{
 	display: flex;
 	flex-direction: row-reverse;
+	justify-content: space-between;
 	}
 	.title-index{
 		font-size: $fontAC;
@@ -24,6 +25,8 @@
 
 	.text-style{
 		font-size: $fontQS;
+	    margin-bottom: 4rem;
+  		margin-top: 5rem;
 	}
 	.formato-titulo{
 		font-size: $fontXXXL;
@@ -35,8 +38,9 @@
 		margin-left: 2rem;
 		margin-right: 2rem;
 	}
-	.img-ac{
-		margin-top: 7rem;
+	.img-ac {
+    margin-top: 7rem;
+    margin-right: 2rem;
 	}
 	.main-ac{
 		margin-top: 2rem;
@@ -102,6 +106,7 @@
 	}
 	.img-ac{
 		margin-top: 9rem;
+		margin-right: 2rem;
 	}
 	/*contacto*/
 	.title-map{
@@ -122,8 +127,9 @@
 		display: flex;
 	justify-content: space-evenly;
 	}
-	.header-r{
-		margin-top: 5rem;
+	.header-r {
+    margin-right: 2rem;
+    margin-top: 5rem;
 	}
 	.main-r{
 		margin-top: 5rem;

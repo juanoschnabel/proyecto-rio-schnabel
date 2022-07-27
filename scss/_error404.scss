@@ -1,7 +1,7 @@
 
 #fondo-error{
     background-color: map-get($map:$colores, $key: 'blackFont');
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -9,21 +9,22 @@
 .errortitle {
     text-align: center;
     color:map-get($map:$colores, $key: 'white');
-    margin-top: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    font-size: $fontXXXL;
 }
 .errorsubtitle{
 	text-align: center;
 	color:map-get($map:$colores, $key: 'white');
+    font-size: $fontAC;
+    margin-bottom: 2rem;
+
 }
 .cont-error{
-	display: flex;
-	flex-direction: column;
+    margin-top: 7rem;
 }
 .img-error{
     display: flex;
-    height: auto;
-    object-fit: contain;
     flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: nowrap;
+    object-fit: cover;
 }

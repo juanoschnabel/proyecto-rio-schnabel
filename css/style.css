@@ -331,7 +331,7 @@ iframe {
 
 #fondo-error {
   background-color: black;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; }
@@ -339,23 +339,23 @@ iframe {
 .errortitle {
   text-align: center;
   color: white;
-  margin-top: 2rem; }
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+  font-size: 3.5rem; }
 
 .errorsubtitle {
   text-align: center;
-  color: white; }
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 2rem; }
 
 .cont-error {
-  display: flex;
-  flex-direction: column; }
+  margin-top: 7rem; }
 
 .img-error {
   display: flex;
-  height: auto;
-  object-fit: contain;
   flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: nowrap; }
+  object-fit: cover; }
 
 @media (min-width: 768px) {
   .pie {
@@ -457,4 +457,13 @@ iframe {
   #titulo-reserva {
     font-size: 3.5rem; }
   .img-error {
-    height: 650px; } }
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+  .cont-error {
+    margin-top: 0rem; }
+  .errorsubtitle {
+    margin-bottom: 0rem;
+    font-size: 3.5rem; }
+  .errortitle {
+    font-size: 5rem; } }

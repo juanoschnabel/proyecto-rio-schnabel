@@ -137,8 +137,19 @@
 	#titulo-reserva{
 		font-size: $fontXXXL;
 	}
-	.img-error{
-    height: 650px;
+	.img-error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 	}
-
+	.cont-error{
+		margin-top: 0rem;
+	}
+	.errorsubtitle{
+		margin-bottom: 0rem;
+		font-size: $fontXXXL;
+	}
+	.errortitle{
+		font-size: $fontTitle;
+	}
 }

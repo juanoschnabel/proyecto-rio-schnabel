@@ -9,10 +9,11 @@
 }
 .img-pie{
 	display: flex;
-	max-height: 40px;
-	max-width: 40px;
-        :hover{
-            transform: scaleX(1.2);
+	max-height: 100px;
+	max-width: 100px;
+    border-radius: 0px;
+        &:hover{
+            transform: scaleX(1.4);
             cursor: pointer;
         }
 }

@@ -22,10 +22,11 @@
 @include map(100%, 100%)
 }
 
-.logos-redes-contacto {
-  display: flex;
+.logos-redes-contacto{
   height: 100px;
+  border-radius: 0px;
 }
+
 .vinculos-flex-contacto {
   display: flex;
   flex-direction: row;

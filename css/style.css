@@ -89,8 +89,8 @@ iframe {
 
 .img-pie {
   display: flex;
-  max-height: 100px;
-  max-width: 100px;
+  height: 100px;
+  object-fit: cover;
   border-radius: 0px; }
   .img-pie:hover {
     transform: scaleX(1.4);
@@ -99,6 +99,9 @@ iframe {
 .flex-img-pie {
   display: flex;
   justify-content: center; }
+
+#ig {
+  height: 120px; }
 
 /*index*/
 .foto-index {

@@ -9,8 +9,8 @@
 }
 .img-pie{
 	display: flex;
-	max-height: 100px;
-	max-width: 100px;
+	height: 100px;
+    object-fit: cover;
     border-radius: 0px;
         &:hover{
             transform: scaleX(1.4);
@@ -21,3 +21,6 @@
     display: flex;
     justify-content: center;
     }
+#ig{
+    height: 120px;
+}

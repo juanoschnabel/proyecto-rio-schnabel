@@ -192,7 +192,7 @@ iframe {
   align-items: center; }
 
 /*reservas*/
-#titulo-reserva {
+.titulo-reserva {
   font-size: 2rem;
   color: #f29f05;
   text-decoration: underline;

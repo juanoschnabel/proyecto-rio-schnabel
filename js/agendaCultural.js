@@ -10,10 +10,20 @@ let programacion = [
   { day: "sabado", date: "16/1/22", activity: "milonga" },
   { day: "domingo", date: "17/1/22", activity: "antidomingo" },
 ];
-let agenda = document.getElementById("agenda");
-programacion.forEach((agend) => {
-  let container = document.createElement("tr");
-  container.classList.add("table-dark");
-  container.innerHTML = ` <th scope="row">${agend.day}</th> <td colspan="2" class="table-active">${agend.date}</td> <td>${agend.activity}</td>`;
-  agenda.appendChild(container);
-});
+//JSON
+const programacionJson = JSON.stringify(programacion);
+localStorage.setItem("programacion", programacionJson);
+const programacionJS = JSON.parse(programacionJson);
+console.log(programacionJS);
+//FUNCION AGEND
+function agend() {
+  let agenda = document.getElementById("agenda");
+  programacion.forEach((agend) => {
+    let container = document.createElement("tr");
+    container.classList.add("table-dark");
+    container.innerHTML = ` <th scope="row">${agend.day}</th> <td colspan="2" class="table-active">${agend.date}</td> <td>${agend.activity}</td>`;
+    agenda.appendChild(container);
+  });
+}
+
+agend();

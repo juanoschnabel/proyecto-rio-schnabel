@@ -31,6 +31,7 @@ form.addEventListener("submit", (e) => {
   } else {
     space = `${outdoor.value}`;
   }
+  //ARRAY FINAL
   const reservation = {
     name,
     phone,

@@ -5,7 +5,10 @@ let p = document.createElement("p");
 p.innerHTML = text;
 divReserva.appendChild(p);
 //EVENTO SUBMIT
-form.addEventListener("submit", (e) => {
+const reservForm = document.getElementById("form");
+let reservations = [];
+let reservationJS;
+reservForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const name = document.getElementById("name").value;
   const phone = document.getElementById("phone").value;
@@ -45,10 +48,10 @@ form.addEventListener("submit", (e) => {
   alert(
     `Usted, ${reservation.name}, hizo una reserva para ${reservation.persons} personas, el día ${reservation.date} a las ${reservation.hour} horas, en el salón que se encuentra en ${reservation.floor}, en el sector de ${reservation.space}.\nLos datos de contacto registrados son:\nNúmero de teléfono:${reservation.phone}\nEmail:${reservation.mail} \nLos esperamos!!`
   );
-
-  const reservationJson = JSON.stringify(reservation);
+  reservations.push(reservation);
+  const reservationJson = JSON.stringify(reservations);
   localStorage.setItem("reservation", reservationJson);
-  const reservationJS = JSON.parse(reservationJson);
+  reservationJS = JSON.parse(reservationJson);
   console.log(reservationJS);
   form.reset();
 });

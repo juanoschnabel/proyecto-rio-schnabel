@@ -208,6 +208,9 @@ iframe {
   margin-right: 2rem;
   border-radius: 10px; }
 
+.formato-DOM {
+  background-color: aliceblue; }
+
 .formato-linea-reserva {
   display: flex;
   flex-direction: row;

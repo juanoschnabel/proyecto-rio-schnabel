@@ -75,14 +75,14 @@ const agregarReserva = (reservas) => {
   reservas.forEach((reserva) => {
     div.innerHTML += `
     <div class="card text-center mb-4 formato-tabla">
-        <div class="card-body ms-2 fs-5">
+        <div class="card-body ms-2 fs-5 formato-DOM">
             <strong>Nombre</strong>: ${reserva.nombre} -
             <strong>Día</strong>: ${reserva.dia}
             <strong>Hora</strong>: ${reserva.hora}
-            <strong>Cantidad de personas</strong>: ${reserva.personas}
+            <strong>Cantidad de personas</strong>: ${reserva.personas}<br>
             <strong>Piso</strong>: ${reserva.piso}
             <strong>Lugar</strong>: ${reserva.espacio}
-            <strong>Datos de contacto</strong>: ${reserva.telefono} ${reserva.mail}
+            <strong> Teléfono:</strong> ${reserva.telefono}<strong> Mail:</strong> ${reserva.mail}<br>
             <button href="#" class="btn btn-danger" id="${reserva.nombre}" name="delete" value="${reserva.nombre}">Cancelar Reserva</button>
         </div>
     </div>

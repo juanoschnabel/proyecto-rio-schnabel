@@ -4,54 +4,109 @@ let text = "<p> Elegí tu lugar preferido para pasar una gran noche!! </p>";
 let p = document.createElement("p");
 p.innerHTML = text;
 divReserva.appendChild(p);
-//EVENTO SUBMIT
+
+//VARIABLES FORM
 const reservForm = document.getElementById("form");
-let reservations = [];
-let reservationJS;
+let reservas = [];
+
 reservForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  const name = document.getElementById("name").value;
-  const phone = document.getElementById("phone").value;
-  const mail = document.getElementById("mail").value;
-  const date = document.getElementById("date").value;
-  const hour = document.getElementById("hour").value;
-  const persons = Number(document.getElementById("persons").value);
+  generarReserva();
+  agregarReserva(reservas);
+  reservaStorage(reservas);
+});
+document.addEventListener("DOMContentLoaded", () => {
+  if (localStorage.getItem("reserva")) {
+    reservas = recuperarReserva();
+    agregarReserva(reservas);
+  }
+});
 
-  //CHECKRADIOS
-  let up = document.getElementById("planta-alta");
-  let down = document.getElementById("planta-baja");
-  let floor;
-  if (up.checked == true) {
-    floor = `${up.value}`;
+function floor(arriba, abajo) {
+  if (arriba.checked == true) {
+    return arriba.value;
   } else {
-    floor = `${down.value}`;
+    return abajo.value;
   }
-  let indoor = document.getElementById("adentro");
-  let outdoor = document.getElementById("afuera");
-  let space;
-  if (indoor.checked == true) {
-    space = `${indoor.value}`;
+}
+function space(adentro, afuera) {
+  if (adentro.checked == true) {
+    return adentro.value;
   } else {
-    space = `${outdoor.value}`;
+    return afuera.value;
   }
-  //ARRAY FINAL
-  const reservation = {
-    name,
-    phone,
+}
+
+function generarReserva() {
+  //ELEMENTOS DEL FORM
+  const nombre = document.getElementById("name").value;
+  const telefono = document.getElementById("phone").value;
+  const mail = document.getElementById("mail").value;
+  const dia = document.getElementById("date").value;
+  const hora = document.getElementById("hour").value;
+  const personas = Number(document.getElementById("persons").value);
+  //CHECK RADIOS
+  const arriba = document.getElementById("planta-alta");
+  const abajo = document.getElementById("planta-baja");
+  const adentro = document.getElementById("adentro");
+  const afuera = document.getElementById("afuera");
+  const piso = floor(arriba, abajo);
+  const espacio = space(adentro, afuera);
+  const reserva = {
+    nombre,
+    telefono,
     mail,
-    date,
-    hour,
-    persons,
-    floor,
-    space,
+    dia,
+    hora,
+    personas,
+    piso,
+    espacio,
   };
   alert(
-    `Usted, ${reservation.name}, hizo una reserva para ${reservation.persons} personas, el día ${reservation.date} a las ${reservation.hour} horas, en el salón que se encuentra en ${reservation.floor}, en el sector de ${reservation.space}.\nLos datos de contacto registrados son:\nNúmero de teléfono:${reservation.phone}\nEmail:${reservation.mail} \nLos esperamos!!`
+    `Usted, ${reserva.nombre}, hizo una reserva para ${reserva.personas} personas, el día ${reserva.dia} a las ${reserva.hora} horas, en el salón que se encuentra en ${reserva.piso}, en el sector de ${reserva.espacio}.\nLos datos de contacto registrados son:\nNúmero de teléfono:${reserva.telefono}\nEmail:${reserva.mail} \nLos esperamos!!`
   );
-  reservations.push(reservation);
-  const reservationJson = JSON.stringify(reservations);
-  localStorage.setItem("reservation", reservationJson);
-  reservationJS = JSON.parse(reservationJson);
-  console.log(reservationJS);
-  form.reset();
-});
+  reservas.push(reserva);
+}
+
+const agregarReserva = (reservas) => {
+  const reservasCreadas = document.getElementById("reservasCreadas");
+  const div = document.createElement("div");
+  reservasCreadas.innerHTML = "";
+  reservas.forEach((reserva) => {
+    div.innerHTML += `
+    <div class="card text-center mb-4 formato-tabla">
+        <div class="card-body ms-2 fs-5">
+            <strong>Nombre</strong>: ${reserva.nombre} -
+            <strong>Día</strong>: ${reserva.dia}
+            <strong>Hora</strong>: ${reserva.hora}
+            <strong>Cantidad de personas</strong>: ${reserva.personas}
+            <strong>Piso</strong>: ${reserva.piso}
+            <strong>Lugar</strong>: ${reserva.espacio}
+            <strong>Datos de contacto</strong>: ${reserva.telefono} ${reserva.mail}
+            <button href="#" class="btn btn-danger" id="${reserva.nombre}" name="delete" value="${reserva.nombre}">Cancelar Reserva</button>
+        </div>
+    </div>
+`;
+    reservasCreadas.appendChild(div);
+  });
+  document.getElementById("form").reset();
+  reservasCreadas.addEventListener("click", (e) => {
+    deleteReserva(e.target.value);
+  });
+};
+const deleteReserva = (nombre) => {
+  reservas.forEach((reserva, index) => {
+    if (reserva.nombre === nombre) {
+      reservas.splice(index, 1);
+    }
+  });
+  agregarReserva(reservas);
+  reservaStorage(reservas);
+};
+const reservaStorage = (reservas) => {
+  localStorage.setItem("reserva", JSON.stringify(reservas));
+};
+const recuperarReserva = () => {
+  const reservasStorage = JSON.parse(localStorage.getItem("reserva"));
+  return reservasStorage;
+};

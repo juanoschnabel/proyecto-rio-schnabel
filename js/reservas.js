@@ -36,11 +36,22 @@ function space(adentro, afuera) {
     return afuera.value;
   }
 }
-
+function validacionTelefono(number) {
+  return number.toString().length;
+}
+function validacionFecha(date) {
+  const hoy = new Date();
+  const fecha = new Date(date);
+  if (fecha < hoy) {
+    return false;
+  } else {
+    return true;
+  }
+}
 function generarReserva() {
   //ELEMENTOS DEL FORM
   const nombre = document.getElementById("name").value;
-  const telefono = document.getElementById("phone").value;
+  const telefono = Number(document.getElementById("phone").value);
   const mail = document.getElementById("mail").value;
   const dia = document.getElementById("date").value;
   const hora = document.getElementById("hour").value;
@@ -62,10 +73,41 @@ function generarReserva() {
     piso,
     espacio,
   };
-  alert(
-    `Usted, ${reserva.nombre}, hizo una reserva para ${reserva.personas} personas, el día ${reserva.dia} a las ${reserva.hora} horas, en el salón que se encuentra en ${reserva.piso}, en el sector de ${reserva.espacio}.\nLos datos de contacto registrados son:\nNúmero de teléfono:${reserva.telefono}\nEmail:${reserva.mail} \nLos esperamos!!`
-  );
-  reservas.push(reserva);
+  if (
+    reserva.nombre != "" &&
+    reserva.telefono != "" &&
+    reserva.mail != "" &&
+    reserva.dia != "" &&
+    reserva.hora != "" &&
+    reserva.personas != "" &&
+    reserva.piso != "" &&
+    reserva.espacio != ""
+  ) {
+    if (reserva.personas > 0 && reserva.personas < 30) {
+      if (!isNaN(reserva.telefono) && validacionTelefono(telefono) == 10) {
+        if (validacionFecha(dia) === true) {
+          if (isNaN(reserva.nombre)) {
+            alert(
+              `Usted, ${reserva.nombre}, hizo una reserva para ${reserva.personas} personas, el día ${reserva.dia} a las ${reserva.hora} horas, en el salón que se encuentra en ${reserva.piso}, en el sector de ${reserva.espacio}.\nLos datos de contacto registrados son:\nNúmero de teléfono:${reserva.telefono}\nEmail:${reserva.mail} \nLos esperamos!!`
+            );
+            reservas.push(reserva);
+          } else {
+            alert("Ingrese un nombre válido");
+          }
+        } else {
+          alert("Ingrese una fecha válida");
+        }
+      } else {
+        alert("Ingrese un teléfono válido");
+      }
+    } else {
+      alert("La reserva admite un mínimo de 1 y un máximo de 30 personas");
+    }
+  } else {
+    alert(
+      "Para realizar la reserva correctamente debe completa todos los campos"
+    );
+  }
 }
 
 const agregarReserva = (reservas) => {

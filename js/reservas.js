@@ -39,6 +39,13 @@ function space(adentro, afuera) {
 function validacionTelefono(number) {
   return number.toString().length;
 }
+function validacionNombre(nombre) {
+  if (!/^([a-zA-ZñÑáéíóúÁÉÍÓÚ])+$/i.test(nombre)) {
+    return false;
+  } else {
+    return true;
+  }
+}
 function validacionFecha(date) {
   const hoy = new Date();
   const fecha = new Date(date);
@@ -50,7 +57,7 @@ function validacionFecha(date) {
 }
 function generarReserva() {
   //ELEMENTOS DEL FORM
-  const nombre = document.getElementById("name").value;
+  const nombre = document.getElementById("name").value.toLowerCase();
   const telefono = Number(document.getElementById("phone").value);
   const mail = document.getElementById("mail").value;
   const dia = document.getElementById("date").value;
@@ -86,13 +93,20 @@ function generarReserva() {
     if (reserva.personas > 0 && reserva.personas < 30) {
       if (!isNaN(reserva.telefono) && validacionTelefono(telefono) == 10) {
         if (validacionFecha(dia) === true) {
-          if (isNaN(reserva.nombre)) {
+          if (
+            isNaN(reserva.nombre) &&
+            validacionTelefono(nombre) > 3 &&
+            validacionTelefono(nombre) <= 20 &&
+            validacionNombre(nombre) === true
+          ) {
             alert(
               `Usted, ${reserva.nombre}, hizo una reserva para ${reserva.personas} personas, el día ${reserva.dia} a las ${reserva.hora} horas, en el salón que se encuentra en ${reserva.piso}, en el sector de ${reserva.espacio}.\nLos datos de contacto registrados son:\nNúmero de teléfono:${reserva.telefono}\nEmail:${reserva.mail} \nLos esperamos!!`
             );
             reservas.push(reserva);
           } else {
-            alert("Ingrese un nombre válido");
+            alert(
+              "Ingrese un nombre válido que tenga entre 4 y 20 caracteres y que solo contenga letras"
+            );
           }
         } else {
           alert("Ingrese una fecha válida");
@@ -124,7 +138,7 @@ const agregarReserva = (reservas) => {
             <strong>Cantidad de personas</strong>: ${reserva.personas}<br>
             <strong>Piso</strong>: ${reserva.piso}
             <strong>Lugar</strong>: ${reserva.espacio}
-            <strong> Teléfono:</strong> ${reserva.telefono}<strong> Mail:</strong> ${reserva.mail}<br>
+            <strong> Teléfono:</strong> ${reserva.telefono}<strong> <br>Mail:</strong> ${reserva.mail}<br>
             <button href="#" class="btn btn-danger" id="${reserva.nombre}" name="delete" value="${reserva.nombre}">Cancelar Reserva</button>
         </div>
     </div>

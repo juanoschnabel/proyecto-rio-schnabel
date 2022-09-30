@@ -8,12 +8,14 @@ divReserva.appendChild(p);
 //VARIABLES FORM
 const reservForm = document.getElementById("form");
 let reservas = [];
+let reserva = {};
 
 reservForm.addEventListener("submit", (e) => {
   e.preventDefault();
   generarReserva();
   agregarReserva(reservas);
   reservaStorage(reservas);
+  document.getElementById("form").reset();
 });
 document.addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem("reserva")) {
@@ -22,85 +24,60 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-function floor(arriba, abajo) {
-  if (arriba.checked == true) {
-    return arriba.value;
-  } else {
-    return abajo.value;
-  }
-}
-function space(adentro, afuera) {
-  if (adentro.checked == true) {
-    return adentro.value;
-  } else {
-    return afuera.value;
-  }
-}
-function validacionTelefono(number) {
+const floor = (arriba, abajo) => {
+  const floor = arriba.checked == true ? arriba.value : abajo.value;
+  return floor;
+};
+const space = (adentro, afuera) => {
+  const space = adentro.checked == true ? adentro.value : afuera.value;
+  return space;
+};
+const contadorDeCaracteres = (number) => {
   return number.toString().length;
-}
-function validacionNombre(nombre) {
-  if (!/^([a-zA-ZñÑáéíóúÁÉÍÓÚ])+$/i.test(nombre)) {
-    return false;
-  } else {
-    return true;
-  }
-}
-function validacionFecha(date) {
+};
+const validacionNombre = (nombre) => {
+  const validacionNombre = !/^([a-zA-ZñÑáéíóúÁÉÍÓÚ])+$/i.test(nombre)
+    ? false
+    : true;
+  return validacionNombre;
+};
+const validacionFecha = (date) => {
   const hoy = new Date();
   const fecha = new Date(date);
-  if (fecha < hoy) {
-    return false;
-  } else {
-    return true;
-  }
-}
-function generarReserva() {
-  //ELEMENTOS DEL FORM
-  const nombre = document.getElementById("name").value.toLowerCase();
-  const telefono = Number(document.getElementById("phone").value);
-  const mail = document.getElementById("mail").value;
-  const dia = document.getElementById("date").value;
-  const hora = document.getElementById("hour").value;
-  const personas = Number(document.getElementById("persons").value);
-  //CHECK RADIOS
-  const arriba = document.getElementById("planta-alta");
-  const abajo = document.getElementById("planta-baja");
-  const adentro = document.getElementById("adentro");
-  const afuera = document.getElementById("afuera");
-  const piso = floor(arriba, abajo);
-  const espacio = space(adentro, afuera);
-  const reserva = {
-    nombre,
-    telefono,
-    mail,
-    dia,
-    hora,
-    personas,
-    piso,
-    espacio,
-  };
+  const validacionFecha = fecha < hoy ? false : true;
+  return validacionFecha;
+};
+const validacion = ({
+  nombre,
+  telefono,
+  mail,
+  dia,
+  hora,
+  personas,
+  piso,
+  espacio,
+}) => {
   if (
-    reserva.nombre != "" &&
-    reserva.telefono != "" &&
-    reserva.mail != "" &&
-    reserva.dia != "" &&
-    reserva.hora != "" &&
-    reserva.personas != "" &&
-    reserva.piso != "" &&
-    reserva.espacio != ""
+    nombre &&
+    telefono &&
+    mail &&
+    dia &&
+    hora &&
+    personas &&
+    piso &&
+    espacio != ""
   ) {
-    if (reserva.personas > 0 && reserva.personas < 30) {
-      if (!isNaN(reserva.telefono) && validacionTelefono(telefono) == 10) {
+    if (personas > 0 && personas < 30) {
+      if (!isNaN(telefono) && contadorDeCaracteres(telefono) == 10) {
         if (validacionFecha(dia) === true) {
           if (
-            isNaN(reserva.nombre) &&
-            validacionTelefono(nombre) > 3 &&
-            validacionTelefono(nombre) <= 20 &&
+            isNaN(nombre) &&
+            contadorDeCaracteres(nombre) > 3 &&
+            contadorDeCaracteres(nombre) <= 20 &&
             validacionNombre(nombre) === true
           ) {
             alert(
-              `Usted, ${reserva.nombre}, hizo una reserva para ${reserva.personas} personas, el día ${reserva.dia} a las ${reserva.hora} horas, en el salón que se encuentra en ${reserva.piso}, en el sector de ${reserva.espacio}.\nLos datos de contacto registrados son:\nNúmero de teléfono:${reserva.telefono}\nEmail:${reserva.mail} \nLos esperamos!!`
+              `Usted, ${nombre}, hizo una reserva para ${personas} personas, el día ${dia} a las ${hora} horas, en el salón que se encuentra en ${piso}, en el sector de ${espacio}.\nLos datos de contacto registrados son:\nNúmero de teléfono:${telefono}\nEmail:${mail} \nLos esperamos!!`
             );
             reservas.push(reserva);
           } else {
@@ -122,7 +99,34 @@ function generarReserva() {
       "Para realizar la reserva correctamente debe completa todos los campos"
     );
   }
-}
+};
+const generarReserva = () => {
+  //ELEMENTOS DEL FORM
+  const nombre = document.getElementById("name").value.toLowerCase();
+  const telefono = Number(document.getElementById("phone").value);
+  const mail = document.getElementById("mail").value;
+  const dia = document.getElementById("date").value;
+  const hora = document.getElementById("hour").value;
+  const personas = Number(document.getElementById("persons").value);
+  //CHECK RADIOS
+  const arriba = document.getElementById("planta-alta");
+  const abajo = document.getElementById("planta-baja");
+  const adentro = document.getElementById("adentro");
+  const afuera = document.getElementById("afuera");
+  const piso = floor(arriba, abajo);
+  const espacio = space(adentro, afuera);
+  reserva = {
+    nombre,
+    telefono,
+    mail,
+    dia,
+    hora,
+    personas,
+    piso,
+    espacio,
+  };
+  validacion(reserva);
+};
 
 const agregarReserva = (reservas) => {
   const reservasCreadas = document.getElementById("reservasCreadas");
@@ -145,16 +149,13 @@ const agregarReserva = (reservas) => {
 `;
     reservasCreadas.appendChild(div);
   });
-  document.getElementById("form").reset();
   reservasCreadas.addEventListener("click", (e) => {
     deleteReserva(e.target.value);
   });
 };
 const deleteReserva = (nombre) => {
   reservas.forEach((reserva, index) => {
-    if (reserva.nombre === nombre) {
-      reservas.splice(index, 1);
-    }
+    reserva.nombre === nombre && reservas.splice(index, 1);
   });
   agregarReserva(reservas);
   reservaStorage(reservas);

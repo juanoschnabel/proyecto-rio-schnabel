@@ -15,7 +15,7 @@ reservForm.addEventListener("submit", (e) => {
   generarReserva();
   agregarReserva(reservas);
   reservaStorage(reservas);
-  // document.getElementById("form").reset();
+  document.getElementById("form").reset();
 });
 document.addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem("reserva")) {
@@ -76,14 +76,6 @@ const validacion = ({
             contadorDeCaracteres(nombre) <= 20 &&
             validacionNombre(nombre) === true
           ) {
-            // Toastify({
-            //   text: "Tu reserva fue creada con éxito!!",
-            //   duration: 5000,
-            //   className: "info",
-            //   style: {
-            //     background: "linear-gradient(to right, #00b09b, #96c93d)",
-            //   },
-            // }).showToast();
             reservas.push(reserva);
           } else {
             Swal.fire({
@@ -142,8 +134,9 @@ const ContadorDiasReserva = (year, month, day) => {
   return i;
 };
 const mensajeFinal = (x) => {
+  const dias = Math.round(x);
   Toastify({
-    text: `Tu reserva fue creada con éxito!! faltan ${x} días para volver a vernos!!`,
+    text: `Tu reserva fue creada con éxito!! faltan ${dias} días para volver a vernos!!`,
     duration: 5000,
     className: "info",
     style: {

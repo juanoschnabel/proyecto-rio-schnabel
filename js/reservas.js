@@ -135,8 +135,9 @@ const ContadorDiasReserva = (year, month, day) => {
 };
 const mensajeFinal = (x) => {
   const dias = Math.round(x);
+  const y = dias + 1;
   Toastify({
-    text: `Tu reserva fue creada con éxito!! faltan ${dias} días para volver a vernos!!`,
+    text: `Tu reserva fue creada con éxito!! faltan ${y} días para volver a vernos!!`,
     duration: 5000,
     className: "info",
     style: {

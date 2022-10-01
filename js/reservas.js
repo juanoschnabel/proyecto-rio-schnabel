@@ -15,7 +15,7 @@ reservForm.addEventListener("submit", (e) => {
   generarReserva();
   agregarReserva(reservas);
   reservaStorage(reservas);
-  document.getElementById("form").reset();
+  // document.getElementById("form").reset();
 });
 document.addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem("reserva")) {
@@ -76,29 +76,80 @@ const validacion = ({
             contadorDeCaracteres(nombre) <= 20 &&
             validacionNombre(nombre) === true
           ) {
-            alert(
-              `Usted, ${nombre}, hizo una reserva para ${personas} personas, el día ${dia} a las ${hora} horas, en el salón que se encuentra en ${piso}, en el sector de ${espacio}.\nLos datos de contacto registrados son:\nNúmero de teléfono:${telefono}\nEmail:${mail} \nLos esperamos!!`
-            );
+            // Toastify({
+            //   text: "Tu reserva fue creada con éxito!!",
+            //   duration: 5000,
+            //   className: "info",
+            //   style: {
+            //     background: "linear-gradient(to right, #00b09b, #96c93d)",
+            //   },
+            // }).showToast();
             reservas.push(reserva);
           } else {
-            alert(
-              "Ingrese un nombre válido que tenga entre 4 y 20 caracteres y que solo contenga letras"
-            );
+            Swal.fire({
+              icon: "warning",
+              title:
+                "Ingrese un nombre válido que tenga entre 4 y 20 caracteres y que solo contenga letras",
+              showConfirmButton: false,
+              timer: 2000,
+            });
+            preventDefault();
           }
         } else {
-          alert("Ingrese una fecha válida");
+          Swal.fire({
+            icon: "warning",
+            title: "Ingrese una fecha válida",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          preventDefault();
         }
       } else {
-        alert("Ingrese un teléfono válido");
+        Swal.fire({
+          icon: "warning",
+          title: "Ingrese un teléfono válido",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        preventDefault();
       }
     } else {
-      alert("La reserva admite un mínimo de 1 y un máximo de 30 personas");
+      Swal.fire({
+        icon: "warning",
+        title: "La reserva admite un mínimo de 1 y un máximo de 30 personas",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      preventDefault();
     }
   } else {
-    alert(
-      "Para realizar la reserva correctamente debe completa todos los campos"
-    );
+    Swal.fire({
+      icon: "warning",
+      title:
+        "Para realizar la reserva correctamente debe completa todos los campos",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+    preventDefault();
   }
+};
+const ContadorDiasReserva = (year, month, day) => {
+  const DateTime = luxon.DateTime;
+  const Interval = luxon.Interval;
+  const hoy = DateTime.now();
+  const fechaReserva = DateTime.local(year, month, day);
+  const i = Interval.fromDateTimes(hoy, fechaReserva);
+  return i;
+};
+const mensajeFinal = (x) => {
+  Toastify({
+    text: `Tu reserva fue creada con éxito!! faltan ${x} días para volver a vernos!!`,
+    duration: 5000,
+    className: "info",
+    style: {
+      background: "linear-gradient(to right, #00b09b, #96c93d)",
+    },
+  }).showToast();
 };
 const generarReserva = () => {
   //ELEMENTOS DEL FORM
@@ -106,6 +157,9 @@ const generarReserva = () => {
   const telefono = Number(document.getElementById("phone").value);
   const mail = document.getElementById("mail").value;
   const dia = document.getElementById("date").value;
+  const diaEstructura = dia.split("-").map((item) => Number(item));
+  const [year, month, day] = diaEstructura;
+  const Interval = ContadorDiasReserva(year, month, day);
   const hora = document.getElementById("hour").value;
   const personas = Number(document.getElementById("persons").value);
   //CHECK RADIOS
@@ -126,6 +180,7 @@ const generarReserva = () => {
     espacio,
   };
   validacion(reserva);
+  mensajeFinal(Interval.length("days"));
 };
 
 const agregarReserva = (reservas) => {
